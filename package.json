@@ -1,0 +1,22 @@
+{
+  "name": "observatory",
+  "version": "0.0.1",
+  "description": "\u0016Front-end interface for the Celestial Bodies package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hieronymous-bean/observatory.git"
+  },
+  "keywords": [
+    "observatory"
+  ],
+  "author": "jeffreyallanbrown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hieronymous-bean/observatory/issues"
+  },
+  "homepage": "https://github.com/hieronymous-bean/observatory#readme"
+}
