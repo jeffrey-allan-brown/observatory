@@ -8,7 +8,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/hieronymous-bean/observatory.git"
   },
@@ -20,7 +20,8 @@
   "dependencies": {
     "celestial-bodies": "0.0.2",
     "core-js": "^3.6.5",
-    "vue": "^3.0.4"
+    "vue": "^3.0.4",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

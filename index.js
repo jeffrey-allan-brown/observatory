@@ -1,4 +1,4 @@
-const celestial = require('../celestial-bodies');
+const celestial = require('celestial-bodies');
 
 const payload = {
 	key: 'DEMO_KEY', // required - can include personal API key or leave as DEMO_KEY and it will still work.
