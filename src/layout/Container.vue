@@ -7,19 +7,15 @@
         </div>
         <div class="col-xl-1 col-lg-2 col-md-3">
         </div>
-        <div class="col-xl-11 col-lg-10 col-md-9">
-          <div class="col-md-3 mt-5">
             <RequestCard
               v-for="type in RequestTypes"
               v-bind:name="type.name"
               :key="type.id"
-              class="mb-3"
+              class="col-md-3 mt-3"
             >
             </RequestCard>
-          </div>
-        </div>
       </div>
-  </div>
+    </div>
     <Footer></Footer>
   </div>
 </template>

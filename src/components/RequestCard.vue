@@ -1,16 +1,21 @@
 <template>
-      <b-card-group deck>
-        <b-card header-tag="header" footer-tag="footer">
-          <template #header>
-            <h6 class="mb-0"> {{ name }}</h6>
-          </template>
-          <b-card-text>Header and footers using slots.</b-card-text>
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-          <template #footer>
-            <em></em>
-          </template>
-        </b-card>
-      </b-card-group>
+  <div>
+  <b-card
+    img-src="https://picsum.photos/600/300/?image=25"
+    img-alt="Image"
+    img-top
+    tag="request"
+    style="max-width: 30rem;"
+    class="shadow-lg col-md-3 mb-2"
+  >
+    <h1>{{ name }}</h1>
+    <b-card-text>
+      
+    </b-card-text>
+
+    <b-button href="#" variant="dark">Trigger {{ name }} Request</b-button>
+  </b-card>
+</div>
 </template>
 
 <script>
