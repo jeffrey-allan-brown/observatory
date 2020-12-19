@@ -1,19 +1,23 @@
 <template>
   <div>
   <b-card
-    img-src="https://picsum.photos/600/300/?image=25"
     img-alt="Image"
     img-top
     tag="request"
-    style="max-width: 30rem;"
-    class="shadow-lg col-md-3 mb-2"
+    :title="name"
+    :subtitle="subtitle"
+    style=""
+    class="shadow-sm col px-5"
   >
-    <h1>{{ name }}</h1>
-    <b-card-text>
-      
+
+  <b-card-text>
+      Some quick example text to build on the <em>card title</em> and make up the bulk of the card's
+      content.
     </b-card-text>
 
-    <b-button href="#" variant="dark">Trigger {{ name }} Request</b-button>
+    <b-card-text>A second paragraph of text in the card.</b-card-text>
+
+    <b-button href="#" variant="danger">Trigger {{ name }} Request</b-button>
   </b-card>
 </div>
 </template>
@@ -21,6 +25,6 @@
 <script>
 export default {
   name: 'RequestCard',
-  props: [ 'name' ]
+  props: [ 'name', 'subtitle' ]
 }
 </script>
