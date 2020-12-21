@@ -18,8 +18,8 @@
     <b-container fluid class="px-5">
       <b-row>
         <b-col>
-          <b-jumbotron header="Observatory" lead="Interactive Front End for the Celestial Bodies Package">
-            </b-jumbotron>
+          <b-jumbotron header="Observatory" lead="Interactive Front End for the Celestial Bodies Package" class="py-2">
+          </b-jumbotron>
         </b-col>
       </b-row>
     </b-container>
@@ -46,11 +46,11 @@ export default {
   data: function () {
     return {
       RequestTypes: [
-        { id: 1, name: 'APOD', subtitle: 'Subtitle' },
-        { id: 2, name: 'Asteroids', subtitle: 'Subtitle'  },
-        { id: 3, name: 'DONKI', subtitle: 'Subtitle'  },
-        { id: 4, name: 'Earth', subtitle: 'Subtitle'  },
-        { id: 5, name: 'Mars Rover', subtitle: 'Subtitle'  },
+        { id: 1, name: 'Astronomy Picture of the Day', subtitle: 'As the name implies, this API will return the Astronomy Picture of the Day for a given day.' },
+        { id: 2, name: 'Asteroids - Near Earth Objects ', subtitle: 'This API returns detailed information on objects orbiting Earth on a given day.'  },
+        { id: 3, name: 'Database Of Notifications, Knowledge, Information', subtitle: 'The Space Weather Database Of Notifications, Knowledge, Information (DONKI) is a comprehensive on-line tool for space weather forecasters, scientists, and the general space science community.'  },
+        { id: 4, name: 'Earth', subtitle: 'Landsat imagery is provided to the public as a joint project between NASA and USGS. '  },
+        { id: 5, name: 'Mars Rover Photos', subtitle: 'This API is designed to collect image data gathered by NASA\'s Curiosity, Opportunity, and Spirit rovers on Mars and make it more easily available to other developers, educators, and citizen scientists. '  },
       ]
     }
   },
