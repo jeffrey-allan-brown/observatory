@@ -25,17 +25,7 @@
     </b-container>
     <b-container fluid class="px-5">
       <b-row>
-        <b-card-group>
-        <RequestCard
-            v-for="type in RequestTypes"
-            :name="type.name"
-            :subtitle="type.subtitle"
-            :thumbnail="type.thumbnail"
-            :key="type.id"
-            class="col-md-3 p-2 d-flex align-content-stretch flex-wrap"
-            >
-            </RequestCard>
-          </b-card-group>
+
       </b-row>
     </b-container>
     <Footer></Footer>

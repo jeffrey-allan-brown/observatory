@@ -9,7 +9,14 @@ export default new Router({
     {
       path: '/',
       name: 'Container',
-      component: Container
+      component: Container,
+      redirect: '/main-dashboard',
+      children: [
+        {
+            path: '/main-dashboard',
+            name: 'Dashboard'
+        }
+      ]
     }
   ]
 })
