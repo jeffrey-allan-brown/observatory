@@ -10,7 +10,7 @@
     style=""
     class="shadow-sm border col py-3"
   >
-    <b-button href="#" variant="dark" size="lg" class="mt-3 stretched-link">Use this API</b-button>
+    <b-button href="#" variant="dark" size="md" class="mt-3 card-link">Use this API</b-button>
   </b-card>
 </div>
 </template>
