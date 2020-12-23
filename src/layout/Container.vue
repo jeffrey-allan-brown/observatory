@@ -2,40 +2,60 @@
 
   <div>
     <Navigation></Navigation>
-    <b-container fluid class="px-5">
+    <b-container fluid class="px-0">
       <b-row>
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+              <li class="nav-item py-1">
+                <a class="nav-link active font-weight-bold" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+
+              <li class="nav-item py-1">
+                <a class="nav-link font-weight-bold" href="#">
+                  <span data-feather="box"></span>
+                  Astronomy Picture of the Day
+                </a>
+              </li>
+
+              <li class="nav-item py-1">
+                <a class="nav-link font-weight-bold" href="#">
+                  <span data-feather="radio"></span>
+                  Asteroids - NEOS
+                </a>
+              </li>
+
+              <li class="nav-item py-1">
+                <a class="nav-link font-weight-bold" href="#">
+                  <span data-feather="sunrise"></span>
+                  DONKI
+                </a>
+              </li>
+
+              <li class="nav-item py-1">
+                <a class="nav-link font-weight-bold" href="#">
+                  <span data-feather="globe"></span>
+                  Earth Observation Data
+                </a>
+              </li>
+              
+              <li class="nav-item py-1">
+                <a class="nav-link font-weight-bold" href="#">
+                  <span data-feather="codesandbox"></span>
+                  Mars Rover Photos
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
         <b-col>
-          <b-breadcrumb class="mt-4">
-            <b-breadcrumb-item href="#home">
-              <b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-              Home
-            </b-breadcrumb-item>
-            <b-breadcrumb-item active href="#foo">Observatory Dashboard</b-breadcrumb-item>
-          </b-breadcrumb>
+          <router-view/>
         </b-col>
-      </b-row>
-    </b-container>
-    <b-container fluid class="px-5">
-      <b-row>
-        <b-col>
-          <b-jumbotron header="Observatory" lead="Interactive Front End for the Celestial Bodies Package" class="py-2">
-          </b-jumbotron>
-        </b-col>
-      </b-row>
-    </b-container>
-    <b-container fluid class="px-5">
-      <b-row>
-        <b-card-group>
-        <RequestCard
-            v-for="type in RequestTypes"
-            :name="type.name"
-            :subtitle="type.subtitle"
-            :thumbnail="type.thumbnail"
-            :key="type.id"
-            class="col-md-3 p-2 d-flex align-content-stretch flex-wrap"
-            >
-            </RequestCard>
-          </b-card-group>
       </b-row>
     </b-container>
     <Footer></Footer>
@@ -60,7 +80,7 @@ export default {
   components: {
     'Navigation': () => import('./Navigation'),
     'Footer': () => import('./Footer'),
-    'RequestCard': () => import('../components/RequestCard'),
+    // 'RequestCard': () => import('../components/RequestCard'),
   }
 }
 </script>
