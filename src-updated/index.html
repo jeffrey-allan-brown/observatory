@@ -33,74 +33,81 @@
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
+	        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+	          <div class="sidebar-sticky">
+	            <ul class="nav flex-column">
 
-              <li class="nav-item py-1">
-                <a class="nav-link active font-weight-bold" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
+	              <li class="nav-item py-1">
+	                <a class="nav-link active font-weight-bold" href="#">
+	                  <span data-feather="home"></span>
+	                  Dashboard <span class="sr-only">(current)</span>
+	                </a>
+	              </li>
 
-              <li class="nav-item py-1">
-                <a class="nav-link font-weight-bold" href="#">
-                  <span data-feather="box"></span>
-                  Astronomy Picture of the Day
-                </a>
-              </li>
+	              <li class="nav-item py-1">
+	                <a class="nav-link font-weight-bold" href="#">
+	                  <span data-feather="box"></span>
+	                  Astronomy Picture of the Day
+	                </a>
+	              </li>
 
-              <li class="nav-item py-1">
-                <a class="nav-link font-weight-bold" href="#">
-                  <span data-feather="radio"></span>
-                  Asteroids - NEOS
-                </a>
-              </li>
+	              <li class="nav-item py-1">
+	                <a class="nav-link font-weight-bold" href="#">
+	                  <span data-feather="radio"></span>
+	                  Asteroids - NEOS
+	                </a>
+	              </li>
 
-              <li class="nav-item py-1">
-                <a class="nav-link font-weight-bold" href="#">
-                  <span data-feather="sunrise"></span>
-                  DONKI
-                </a>
-              </li>
+	              <li class="nav-item py-1">
+	                <a class="nav-link font-weight-bold" href="#">
+	                  <span data-feather="sunrise"></span>
+	                  DONKI
+	                </a>
+	              </li>
 
-              <li class="nav-item py-1">
-                <a class="nav-link font-weight-bold" href="#">
-                  <span data-feather="globe"></span>
-                  Earth Observation Data
-                </a>
-              </li>
-              
-              <li class="nav-item py-1">
-                <a class="nav-link font-weight-bold" href="#">
-                  <span data-feather="codesandbox"></span>
-                  Mars Rover Photos
-                </a>
-              </li>
+	              <li class="nav-item py-1">
+	                <a class="nav-link font-weight-bold" href="#">
+	                  <span data-feather="globe"></span>
+	                  Earth Observation Data
+	                </a>
+	              </li>
+	              
+	              <li class="nav-item py-1">
+	                <a class="nav-link font-weight-bold" href="#">
+	                  <span data-feather="codesandbox"></span>
+	                  Mars Rover Photos
+	                </a>
+	              </li>
 
-            </ul>
-          </div>
-        </nav>
+	            </ul>
+	          </div>
+	        </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2 font-weight-bold">Observatory Dashboard</h1>
-          </div>
-          <row>
-				<div class="col-md-3">
-					<div class="card">
-					  <img :src="imgSrc" :title="imgTitle" class="card-img-top" alt="...">
-					  <div class="card-body">
-					    <h5 class="card-title font-weight-bold">{{ imgTitle }}</h5>
-					    <p class="card-text">{{ imgDescription }}</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
+        	<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+	        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+	            <h1 class="h2 font-weight-bold">Today's Astronomy Picture of the Day</h1>
+	        </div>
+	        <div class="card">
+	          	<div class="row">
+					<div class="col-md-3">
+					  	<img :src="imgSrc" :title="imgTitle" class="card-img-top" alt="...">
+					</div>
+					<div class="col-md-5">
+					  	<div class="card-body">
+					    	<h5 class="card-title font-weight-bold">{{ imgTitle }}</h5>
+					    	<p class="card-text">{{ imgDescription }}</p>
+					    	<p class="card-text">Date of Image: {{ apiDate }}</p>
+					  	</div>
 					</div>
 				</div>
-			</row>
+			</div>
+
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-2 my-5 border-bottom">
+            	<h1 class="h2 font-weight-bold">Near Earth Orbit Objects for Today</h1>
+          	</div>
           </div>
         </main>
+
       </div>
     </div>
 	</div>
@@ -123,9 +130,10 @@
 			this.fetchApod();
 		},
 		methods: {
+
 			fetchApod: function() {
-				var apiKey = 'DEMO_KEY';
-				var apiDate = '2016-09-30';
+				var apiKey = 'ofmobU4wrsnPlHaeSQUngj5xgofeEvZ8Hf0SE81X';
+				var apiDate = '2018-11-21';
 				var hd = 'true';
 				var url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey + '&date=' + apiDate + '&hd=' + hd;
 
@@ -134,6 +142,7 @@
 					vm.imgSrc = res.data.url;
 					vm.imgTitle = res.data.title;
 					vm.imgDescription = res.data.explanation;
+					vm.apiDate = apiDate;
 				});
 
 			}
