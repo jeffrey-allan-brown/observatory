@@ -1,24 +1,28 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Container from '../layout/Container'
-import MainDashboard from '../components/MainDashboard'
+// library imports //
+import { createRouter, createWebHistory } from 'vue-router';
 
-Vue.use(Router)
+// layouts //
+import ApplicationContainer from '../layouts/container/ApplicationContainer.vue';
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Container',
-      component: Container,
-      redirect: '/main-dashboard',
-      children: [
-        {
-            path: '/main-dashboard',
-            name: 'MainDashboard',
-            component: MainDashboard
-        }
-      ]
-    }
-  ]
-})
+// main route definitions //
+const routes = [
+  {
+    path: '/',
+    component: ApplicationContainer,
+    name: "ApplicationContainer",
+    children: [
+
+    ]
+  }
+];
+
+// define router //
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition || { left: 0, top: 0 }
+  }
+});
+
+export default router

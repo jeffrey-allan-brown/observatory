@@ -1,15 +1,17 @@
-import Vue from 'vue';
-import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router'
+import router from './router';
+import { store } from './store';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+// import tailwind //
+import './assets/css/tailwind.css';
 
-Vue.use(BootstrapVue);
+// create the app instance //
+const app = createApp(App);
 
-new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
-});
+// declare the store and router //
+app.use(store);
+app.use(router);
+
+// main mount //
+app.mount('#app');
